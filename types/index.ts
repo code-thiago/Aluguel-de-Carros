@@ -1,3 +1,4 @@
+import type { SearchParams } from "next/dist/server/request/search-params";
 import { MouseEventHandler } from "react";
 
 export interface CarProps {
@@ -39,7 +40,7 @@ export interface FilterProps {
 }
 
 export interface HomeProps {
-  searchParams: FilterProps;
+  searchParams: Promise<FilterProps>;
 }
 
 export interface CarCardProps {

@@ -4,13 +4,16 @@ import { fuels, yearsOfProduction } from "@/constants";
 import { CarCard, SearchBar, CustomFilter, Hero } from "@/components";
 
 export default async function Home({ searchParams }: HomeProps) {
+  const query = await searchParams 
   const allCars = await fetchCars({
-    manufacturer: searchParams.manufacturer || "",
-    year: searchParams.year || 2022,
-    fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
-    model: searchParams.model || "",
+    manufacturer:  query.manufacturer || "",
+    year:  query.year || 2022,
+    fuel:  query.fuel || "",
+    //limit:  query.limit || 10,
+    // limit e para conta premiuns da API
+    model:  query.model || "",
   });
+  console.log(allCars);
 
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
@@ -37,8 +40,8 @@ export default async function Home({ searchParams }: HomeProps) {
         {!isDataEmpty ? (
           <section>
              <div className="home__cars-wrapper">
-              {allCars?.map((car) => (
-                <CarCard car={car}/>
+              {allCars?.map((car,i) => (
+                <CarCard key={i} car={car}/>
             ))}
              </div>
 
