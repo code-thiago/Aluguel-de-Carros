@@ -11,9 +11,9 @@ const Hero = () => {
   return (
     <div className='hero'>
       <div className='flex-1 pt-36 padding-x'>
-        <h1 className='hero__title'>Encontre, reserve ou alugue um carro de forma rápida e fácil</h1>
+        <h1 className='hero__title'>Veja as especificações completas de qualquer carro</h1>
 
-        <p className='hero__subtitle'>Aproveite sua experiência de aluguel de carros com nosso processo de reserva sem esforço</p>
+        <p className='hero__subtitle'>Descubra informações detalhadas e especificações completas sobre qualquer carro, tudo em um único lugar</p>
 
         <CustomButton 
            title="Explorar carros"
